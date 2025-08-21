@@ -1,52 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./index.js" defer></script>
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body>
+    <main>
+      <!-- JS will handle messages; keep it simple and accessible -->
+      <form action="" method="post" autocomplete="on" novalidate>
+        <fieldset>
+          <legend>Contact Us</legend>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Contact form</title>
+          <!-- Names -->
+          <div class="form-name">
+            <div class="form-field">
+              <div class="form-label-field">
+                <label for="first-name">First Name <span>*</span></label>
+                <small
+                  id="first-name-error"
+                  class="instructions"
+                  hidden
+                  role="alert"
+                ></small>
+              </div>
+              <input
+                id="first-name"
+                name="first-name"
+                type="text"
+                minlength="2"
+                maxlength="20"
+                aria-describedby="first-name-instructions first-name-error"
+                required
+              />
+            </div>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+            <div class="form-field">
+              <div class="form-label-field">
+                <label for="last-name">Last Name <span>*</span></label>
+                <small
+                  id="last-name-error"
+                  class="instructions"
+                  hidden
+                  role="alert"
+                ></small>
+              </div>
+              <input
+                id="last-name"
+                name="last-name"
+                type="text"
+                minlength="2"
+                maxlength="20"
+                aria-describedby="last-name-instructions last-name-error"
+                required
+              />
+            </div>
+          </div>
 
-  Contact Us
+          <!-- Email -->
+          <div class="form-field">
+            <div class="form-label-field">
+              <label for="email-address">Email Address <span>*</span></label>
+              <small
+                id="email-address-error"
+                class="instructions"
+                hidden
+                role="alert"
+              ></small>
+            </div>
+            <input
+              id="email-address"
+              name="email-address"
+              type="email"
+              autocomplete="email"
+              aria-describedby="email-address-instructions email-address-error"
+              required
+            />
+          </div>
 
-  First Name
-  This field is required
+          <!-- Query Type (radios) -->
+          <div class="form-field">
+            <div class="form-label-field">
+              <label for="query-type-group">Query Type <span>*</span></label>
+              <small
+                id="query-type-error"
+                class="instructions"
+                hidden
+                role="alert"
+              ></small>
+            </div>
 
-  Last Name
-  This field is required
+            <div
+              id="query-type-group"
+              class="form-radio-container"
+              role="radiogroup"
+              aria-describedby="query-type-instructions query-type-error"
+            >
+              <div class="form-radio-item">
+                <input
+                  id="query-general"
+                  name="query-type"
+                  type="radio"
+                  value="general"
+                  class="radio"
+                  required
+                />
+                <label for="query-general">General Enquiry</label>
+              </div>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+              <div class="form-radio-item">
+                <input
+                  id="query-support"
+                  name="query-type"
+                  type="radio"
+                  value="support"
+                  class="radio"
+                />
+                <label for="query-support">Support Request</label>
+              </div>
+            </div>
+          </div>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+          <!-- Message -->
+          <div class="form-field">
+            <div class="form-label-field">
+              <label for="message">Message <span>*</span></label>
+              <small
+                id="message-error"
+                class="instructions"
+                hidden
+                role="alert"
+              ></small>
+            </div>
+            <textarea
+              id="message"
+              name="message"
+              minlength="10"
+              aria-describedby="message-instructions message-error"
+              required
+            ></textarea>
+          </div>
 
-  Message
-  This field is required
+          <!-- Consent -->
+          <div class="form-field">
+            <div class="form-label-field">
+              <input
+                class="checkbox"
+                id="consent"
+                name="consent"
+                type="checkbox"
+                aria-describedby="consent-error"
+                required
+              />
+              <label for="consent">
+                I consent to being contacted by the team <span>*</span>
+              </label>
+            </div>
+            <small
+              id="consent-error"
+              class="instructions"
+              hidden
+              role="alert"
+            ></small>
+          </div>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+          <button type="submit">Submit</button>
+          <p id="success-msg" class="instructions" role="status" hidden>
+            Thanks for completing the form. We'll be in touch soon!
+          </p>
+        </fieldset>
+      </form>
+    </main>
+  </body>
 </html>
