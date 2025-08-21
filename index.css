@@ -28,9 +28,11 @@ main {
 }
 
 legend {
+  margin-bottom: 2rem;
+}
+h1 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 2rem;
 }
 
 fieldset {
