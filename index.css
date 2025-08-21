@@ -145,6 +145,10 @@ button {
 }
 
 @media (min-width: 48rem) {
+  main {
+    margin: 6rem auto;
+    width: 50rem;
+  }
   .form-name {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
